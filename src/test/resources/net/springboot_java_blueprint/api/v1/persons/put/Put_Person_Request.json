@@ -1,0 +1,31 @@
+{
+    "FirstName": "Bill",
+    "LastName": "Gates",
+    "Birthday": "1955-11-28",
+    "CreatedId": "E3D3D338-2053-4CE9-877D-DE4563FE321C",
+    "CreatedDate": "2023-10-10T14:30:00+00:00",
+    "ModifiedId": "E3D3D338-2053-4CE9-877D-DE4563FE321C",
+    "ModifiedDate": "2023-11-10T14:30:00+00:00",
+    "Addresses": [
+        {
+            "Street": "Beauty street",
+            "Number": "15",
+            "City": "Kawaii",
+            "PostalCode": "4321",
+            "CreatedId": "E3D3D338-2053-4CE9-877D-DE4563FE321C",
+            "CreatedDate": "2023-10-10T14:30:00+00:00",
+            "ModifiedId": "E3D3D338-2053-4CE9-877D-DE4563FE321C",
+            "ModifiedDate": "2023-11-10T14:30:00+00:00"
+        },
+        {
+            "Street": "Most beauty street",
+            "Number": "16",
+            "City": "Honolulu",
+            "PostalCode": "4321",
+            "CreatedId": "E3D3D338-2053-4CE9-877D-DE4563FE321C",
+            "CreatedDate": "2023-10-10T14:30:00+00:00",
+            "ModifiedId": "E3D3D338-2053-4CE9-877D-DE4563FE321C",
+            "ModifiedDate": "2023-11-10T14:30:00+00:00"
+        }
+    ]
+}
