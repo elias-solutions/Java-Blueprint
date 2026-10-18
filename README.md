@@ -17,4 +17,4 @@ Test
 Docker
 - the image wraps the jar from `target/` (`./mvnw package`), see `Dockerfile`
 - from the Blueprint root: `./build-images.sh` (build missing images, migrate, compose up) or `./build-images.sh -f` (force rebuild)
-- `docker compose up -d` starts PostgreSQL + all APIs (Java Api: http://localhost:8083/swagger)
+- `docker compose up -d` starts PostgreSQL + all APIs (Java Api: http://localhost:5105/swagger)
