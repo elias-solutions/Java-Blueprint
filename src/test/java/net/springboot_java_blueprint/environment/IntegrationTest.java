@@ -21,7 +21,7 @@ import java.lang.annotation.Target;
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         properties = "blueprint.rate-limit.permit-limit=100000")
-@Import(Fixture.class)
+@Import({Fixture.class, PostgresContainerConfiguration.class})
 @MockitoBean(types = UserService.class)
 public @interface IntegrationTest {
 }
