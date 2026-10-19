@@ -11,15 +11,15 @@ import org.springframework.http.HttpStatus;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @IntegrationTest
-class GetAllForbiddenTest {
+class GetAllStandardUserOkTest {
     private static final String ROUTE = "/api/v1/persons";
 
     @Autowired
     private Fixture fixture;
 
     @Test
-    void personsController_GetAll_Forbidden() throws Exception {
+    void personsController_GetAll_StandardUser_Ok() throws Exception {
         var response = fixture.send(HttpMethod.GET, ROUTE, null, TestUsers.STANDARD);
-        assertThat(response.status()).isEqualTo(HttpStatus.FORBIDDEN);
+        assertThat(response.status()).isEqualTo(HttpStatus.OK);
     }
 }
