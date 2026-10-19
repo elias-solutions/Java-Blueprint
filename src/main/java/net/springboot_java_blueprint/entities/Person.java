@@ -3,6 +3,8 @@ package net.springboot_java_blueprint.entities;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OrderColumn;
@@ -16,6 +18,10 @@ import java.util.UUID;
 @Entity
 public class Person extends EntityBase {
     static final int STRING_LENGTH = 200;
+    static final int ENUM_LENGTH = 20;
+    public static final int DESCRIPTION_MAX_LENGTH = 2000;
+    public static final int EMAIL_MAX_LENGTH = 254;
+    public static final int PHONE_MAX_LENGTH = 50;
 
     @Column(nullable = false, length = STRING_LENGTH)
     private String firstName;
@@ -23,8 +29,24 @@ public class Person extends EntityBase {
     @Column(nullable = false, length = STRING_LENGTH)
     private String lastName;
 
-    @Column(nullable = false)
     private LocalDate birthday;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = ENUM_LENGTH)
+    private Gender gender;
+
+    @Column(length = DESCRIPTION_MAX_LENGTH)
+    private String description;
+
+    @Column(length = EMAIL_MAX_LENGTH)
+    private String email;
+
+    @Column(length = PHONE_MAX_LENGTH)
+    private String phone;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = ENUM_LENGTH)
+    private PersonType type;
 
     private UUID createdId;
     private OffsetDateTime createdDate;
@@ -58,6 +80,46 @@ public class Person extends EntityBase {
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public PersonType getType() {
+        return type;
+    }
+
+    public void setType(PersonType type) {
+        this.type = type;
     }
 
     public UUID getCreatedId() {

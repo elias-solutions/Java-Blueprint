@@ -43,6 +43,11 @@ public class UpdatePersonCommandHandler implements CommandHandler<UpdatePersonCo
         person.setFirstName(request.firstName());
         person.setLastName(request.lastName());
         person.setBirthday(request.birthday());
+        person.setGender(request.gender());
+        person.setDescription(request.description());
+        person.setEmail(request.email());
+        person.setPhone(request.phone());
+        person.setType(request.type());
         person.setCreatedId(request.createdId());
         person.setCreatedDate(request.createdDate());
         person.setModifiedId(request.modifiedId());

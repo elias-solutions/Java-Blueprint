@@ -1,6 +1,8 @@
 package net.springboot_java_blueprint.api.v1.persons.put;
 
 import net.springboot_java_blueprint.cqrs.commands.CreatePersonResponse;
+import net.springboot_java_blueprint.entities.Gender;
+import net.springboot_java_blueprint.entities.PersonType;
 import net.springboot_java_blueprint.environment.Fixture;
 import net.springboot_java_blueprint.environment.IntegrationTest;
 import net.springboot_java_blueprint.environment.JsonResourceProvider;
@@ -72,6 +74,11 @@ class PutOkTest {
                 person.id(),
                 "Joe", "El",
                 LocalDate.of(2020, 5, 3),
+                Gender.FEMALE,
+                "Freelance Angular developer",
+                "joe.el@example.com",
+                "+41 62 987 65 43",
+                PersonType.FREELANCER,
                 updateAddresses(person.addresses()),
                 TestUsers.ADMIN.id(),
                 CREATED_DATE,

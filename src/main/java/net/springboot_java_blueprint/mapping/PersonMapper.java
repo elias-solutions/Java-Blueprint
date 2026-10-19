@@ -15,6 +15,11 @@ public final class PersonMapper {
                 person.getFirstName(),
                 person.getLastName(),
                 person.getBirthday(),
+                person.getGender(),
+                person.getDescription(),
+                person.getEmail(),
+                person.getPhone(),
+                person.getType(),
                 person.getAddresses().stream().map(AddressMapper::toGetAddressResponse).toList(),
                 person.getCreatedId(),
                 person.getCreatedDate(),
@@ -28,6 +33,11 @@ public final class PersonMapper {
         person.setFirstName(source.firstName());
         person.setLastName(source.lastName());
         person.setBirthday(source.birthday());
+        person.setGender(source.gender());
+        person.setDescription(source.description());
+        person.setEmail(source.email());
+        person.setPhone(source.phone());
+        person.setType(source.type());
         person.setCreatedId(source.createdId());
         person.setCreatedDate(source.createdDate());
         source.addresses().stream()
