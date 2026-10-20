@@ -5,7 +5,7 @@ Java Backend Blueprint (port of `NET-Blueprint`):
 - Role-based security, ProblemDetail error responses, optimistic locking via entity versions, fixed-window rate limiting
 
 Run
-- start PostgreSQL from the Blueprint root: `docker compose up -d` (database `blueprint_java`)
+- start PostgreSQL from `Init-Blueprint`: `docker compose up -d` (database `blueprint_java`)
 - `./mvnw spring-boot:run` (Windows: `mvnw.cmd spring-boot:run`)
 - Swagger UI: http://localhost:5105/swagger (v1 / v2 in the definition dropdown)
 - Security: OAuth2 resource server validating Keycloak tokens (realm `blueprint`, audience `blueprint-api`, roles from the `roles` claim); `GET` needs role `reader`, `writer` or `admin`; `DELETE` needs `admin`; all other methods `writer` or `admin`
@@ -17,5 +17,5 @@ Test
 
 Docker
 - the image wraps the jar from `target/` (`./mvnw package`), see `Dockerfile`
-- from the Blueprint root: `./build-images.sh` (build missing images, migrate, compose up) or `./build-images.sh -f` (force rebuild)
+- from `Init-Blueprint`: `./build-images.sh` (build missing images, migrate, compose up) or `./build-images.sh -f` (force rebuild)
 - `docker compose up -d` starts PostgreSQL + all APIs (Java Api: http://localhost:5105/swagger)
