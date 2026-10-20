@@ -21,10 +21,6 @@ import java.util.Date;
 import java.util.UUID;
 import java.util.function.UnaryOperator;
 
-/**
- * Stands in for Keycloak: signs access tokens like the "blueprint" realm and publishes the
- * matching JWK set, so the application validates them exactly as in production.
- */
 public class TestTokenIssuer implements AutoCloseable {
     private static final String CERTS_PATH = "/certs";
 
@@ -48,7 +44,6 @@ public class TestTokenIssuer implements AutoCloseable {
         return issue(user, UnaryOperator.identity());
     }
 
-    /** Issues a token whose claims the test may tamper with (issuer, audience, expiry...). */
     public String issue(TestUser user, UnaryOperator<JWTClaimsSet.Builder> tamper) {
         return sign(tamper.apply(claims(user)).build(), signingKey);
     }

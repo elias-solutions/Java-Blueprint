@@ -8,9 +8,6 @@ import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 
-/**
- * Reads JSON test resources that live in the same package as the test class.
- */
 public class JsonResourceProvider {
     private final Class<?> testClass;
     private final JsonMapper jsonMapper;

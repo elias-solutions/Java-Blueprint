@@ -5,10 +5,6 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.DynamicPropertyRegistrar;
 
-/**
- * Points the resource server's JWK set at the {@link TestTokenIssuer}; issuer and audience
- * stay as configured in {@code application.properties}.
- */
 @TestConfiguration(proxyBeanMethods = false)
 public class TestTokenConfiguration {
 

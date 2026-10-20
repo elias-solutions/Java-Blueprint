@@ -10,10 +10,6 @@ public final class EquivalencyAssertions {
     private EquivalencyAssertions() {
     }
 
-    /**
-     * Member-wise comparison that ignores database-generated identity (ids, versions)
-     * and compares timestamps by instant rather than by offset.
-     */
     public static void assertEquivalentIgnoringIdentity(Object actual, Object expected) {
         assertThat(actual)
                 .usingRecursiveComparison()

@@ -21,7 +21,7 @@ class DeleteForbiddenTest {
 
     @Test
     void personsController_Delete_Forbidden() throws Exception {
-        var response = fixture.send(HttpMethod.DELETE, ROUTE + "/" + UUID.randomUUID(), null, TestUsers.STANDARD);
+        var response = fixture.send(HttpMethod.DELETE, ROUTE + "/" + UUID.randomUUID(), null, TestUsers.READER);
         assertThat(response.status()).isEqualTo(HttpStatus.FORBIDDEN);
     }
 }

@@ -19,7 +19,7 @@ class PostForbiddenTest {
 
     @Test
     void personsController_Post_Forbidden() throws Exception {
-        var response = fixture.send(HttpMethod.POST, ROUTE, null, TestUsers.STANDARD);
+        var response = fixture.send(HttpMethod.POST, ROUTE, null, TestUsers.READER);
         assertThat(response.status()).isEqualTo(HttpStatus.FORBIDDEN);
     }
 }

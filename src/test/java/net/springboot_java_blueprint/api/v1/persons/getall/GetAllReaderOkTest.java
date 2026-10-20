@@ -11,15 +11,15 @@ import org.springframework.http.HttpStatus;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @IntegrationTest
-class GetAllStandardUserOkTest {
+class GetAllReaderOkTest {
     private static final String ROUTE = "/api/v1/persons";
 
     @Autowired
     private Fixture fixture;
 
     @Test
-    void personsController_GetAll_StandardUser_Ok() throws Exception {
-        var response = fixture.send(HttpMethod.GET, ROUTE, null, TestUsers.STANDARD);
+    void personsController_GetAll_Reader_Ok() throws Exception {
+        var response = fixture.send(HttpMethod.GET, ROUTE, null, TestUsers.READER);
         assertThat(response.status()).isEqualTo(HttpStatus.OK);
     }
 }

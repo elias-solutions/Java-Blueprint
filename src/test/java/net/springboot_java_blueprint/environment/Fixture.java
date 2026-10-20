@@ -35,7 +35,6 @@ public class Fixture {
         this.environment = environment;
     }
 
-    /** Sends the request with a valid access token for {@code user}; {@code null} sends it anonymously. */
     public TestResponse send(HttpMethod method, String route, String jsonContent, TestUser user)
             throws IOException, InterruptedException {
         return sendWithToken(method, route, jsonContent, user == null ? null : tokenIssuer.issue(user));

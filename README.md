@@ -8,7 +8,7 @@ Run
 - start PostgreSQL from the Blueprint root: `docker compose up -d` (database `blueprint_java`)
 - `./mvnw spring-boot:run` (Windows: `mvnw.cmd spring-boot:run`)
 - Swagger UI: http://localhost:5105/swagger (v1 / v2 in the definition dropdown)
-- Security: OAuth2 resource server validating Keycloak tokens (realm `blueprint`, audience `blueprint-api`, roles from the `roles` claim); `GET` needs role `standard` or `admin`, all other methods `admin`
+- Security: OAuth2 resource server validating Keycloak tokens (realm `blueprint`, audience `blueprint-api`, roles from the `roles` claim); `GET` needs role `reader`, `writer` or `admin`; `DELETE` needs `admin`; all other methods `writer` or `admin`
 
 Test
 - `./mvnw test` runs all tests (integration tests + unit tests)

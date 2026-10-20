@@ -13,7 +13,7 @@ import org.springframework.http.HttpStatus;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @IntegrationTest
-class GetStandardUserOkTest {
+class GetReaderOkTest {
     private static final String ROUTE = "/api/v1/persons";
 
     @Autowired
@@ -25,12 +25,12 @@ class GetStandardUserOkTest {
     }
 
     @Test
-    void personsController_Get_StandardUser_Ok() throws Exception {
+    void personsController_Get_Reader_Ok() throws Exception {
         var content = fixture.jsonResources(GetOkTest.class).readJson("Post_Person_Request.json");
         var createdPerson = fixture.send(HttpMethod.POST, ROUTE, content, TestUsers.ADMIN)
                 .as(CreatePersonResponse.class);
 
-        var response = fixture.send(HttpMethod.GET, ROUTE + "/" + createdPerson.id(), null, TestUsers.STANDARD);
+        var response = fixture.send(HttpMethod.GET, ROUTE + "/" + createdPerson.id(), null, TestUsers.READER);
 
         assertThat(response.status()).isEqualTo(HttpStatus.OK);
     }

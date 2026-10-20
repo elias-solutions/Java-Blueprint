@@ -4,10 +4,6 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.function.LongSupplier;
 
-/**
- * Global fixed-window limiter: grants {@code permitLimit} requests per window and lets up to
- * {@code queueLimit} further requests wait for the next window; anything beyond is rejected.
- */
 public class FixedWindowRateLimiter {
     private final int permitLimit;
     private final long windowNanos;
